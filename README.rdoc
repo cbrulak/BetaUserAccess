@@ -4,4 +4,4 @@ This is a simple gem to help limit alpha/beta/early access to a site or featuers
 
 This gem is very early so please send any feedback via the issues page. 
 
-I used the gem: rails3_engine_demo (https://github.com/krschacht/rails_3_engine_demo.git) as a basis for this gem. 
+I used the gem: rails3_engine_demo (https://github.com/krschacht/rails_3_engine_demo) as a basis for this gem. 
