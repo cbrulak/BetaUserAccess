@@ -1,4 +1,4 @@
-module BetaUserAccess
+module Betauseraccess
   ## Define ControllerMethods
   module Controller
   	## this one manages the usual self.included, klass_eval stuff
@@ -23,6 +23,6 @@ module BetaUserAccess
   end
 end
 
-::ActionController::Base.send :include, BetaUserAccess::Controller
+::ActionController::Base.send :include, Betauseraccess::Controller
 
 

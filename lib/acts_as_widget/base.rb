@@ -1,4 +1,4 @@
-module BetaUserAccess
+module Betauseraccess
   module ActsAsWidget
 
     ## Define ModelMethods
@@ -15,9 +15,9 @@ module BetaUserAccess
           # This is where arbitrary code goes that you want to 
           # add to the class that declared "acts_as_widget"
           
-          has_many :widgets,  :class_name => 'BetaUserAccess::Widget'
+          has_many :widgets,  :class_name => 'Betauseraccess::Widget'
 
-          include BetaUserAccess::ActsAsWidget::Base::InstanceMethods
+          include Betauseraccess::ActsAsWidget::Base::InstanceMethods
         end
       end
       
@@ -33,4 +33,4 @@ module BetaUserAccess
   end
 end
 
-::ActiveRecord::Base.send :include, BetaUserAccess::ActsAsWidget::Base
+::ActiveRecord::Base.send :include, Betauseraccess::ActsAsWidget::Base

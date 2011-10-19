@@ -3,7 +3,7 @@ require 'rails'
 require 'action_controller'
 require 'application_helper'
 
-module BetaUserAccess
+module Betauseraccess
   class Engine < Rails::Engine
 
     # Config defaults

@@ -1,7 +1,7 @@
 require 'rails/generators'
 require 'rails/generators/migration'
 
-class BetaUserAccessGenerator < Rails::Generators::Base
+class BetauseraccessGenerator < Rails::Generators::Base
   include Rails::Generators::Migration
 
   def self.source_root

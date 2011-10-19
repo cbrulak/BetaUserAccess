@@ -1,0 +1,27 @@
+<h1>Listing sign_up_for_beta_accesses</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Twitterid</th>
+    <th>Allowedaccess</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sign_up_for_beta_accesses.each do |sign_up_for_beta_access| %>
+  <tr>
+    <td><%= sign_up_for_beta_access.name %></td>
+    <td><%= sign_up_for_beta_access.twitterid %></td>
+    <td><%= sign_up_for_beta_access.allowedaccess %></td>
+    <td><%= link_to 'Show', sign_up_for_beta_access %></td>
+    <td><%= link_to 'Edit', edit_sign_up_for_beta_access_path(sign_up_for_beta_access) %></td>
+    <td><%= link_to 'Destroy', sign_up_for_beta_access, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sign up for beta access', new_sign_up_for_beta_access_path %>

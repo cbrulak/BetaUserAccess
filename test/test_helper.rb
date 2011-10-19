@@ -10,7 +10,7 @@ require 'app/models/betauseraccess/widget.rb'
 
 def betauseraccess_widget( fixture_name )
   id = @@fixtures['betauseraccess_widget'][ fixture_name.to_s ][ 'id' ]
-  BetaUserAccess::Widget.find( id )
+  Betauseraccess::Widget.find( id )
 end
 
 def load_schema

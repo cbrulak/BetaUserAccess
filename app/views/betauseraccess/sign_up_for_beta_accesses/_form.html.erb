@@ -1,0 +1,25 @@
+<%= form_for(@sign_up_for_beta_access) do |f| %>
+  <% if @sign_up_for_beta_access.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sign_up_for_beta_access.errors.count, "error") %> prohibited this sign_up_for_beta_access from being saved:</h2>
+
+      <ul>
+      <% @sign_up_for_beta_access.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :twitterid %><br />
+    <%= f.text_field :twitterid, :value => session[:beta_user_twitterid] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

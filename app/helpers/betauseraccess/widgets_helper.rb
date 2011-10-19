@@ -1,4 +1,4 @@
-module BetaUserAccess
+module Betauseraccess
   module WidgetsHelper
   
     def helper_for_widgets_view

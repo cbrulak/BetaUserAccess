@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @sign_up_for_beta_access.name %>
+</p>
+
+<p>
+  <b>Twitterid:</b>
+  <%= @sign_up_for_beta_access.twitterid %>
+</p>
+
+<p>
+  <b>Allowedaccess:</b>
+  <%= @sign_up_for_beta_access.allowedaccess %>
+</p>
+
+
+<%= link_to 'Edit', edit_sign_up_for_beta_access_path(@sign_up_for_beta_access) %> |
+<%= link_to 'Back', sign_up_for_beta_accesses_path %>

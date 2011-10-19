@@ -1,0 +1,26 @@
+<h1>Editing sign_up_for_beta_access</h1>
+
+<%= form_for(@sign_up_for_beta_access) do |f| %>
+  <% if @sign_up_for_beta_access.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sign_up_for_beta_access.errors.count, "error") %> prohibited this sign_up_for_beta_access from being saved:</h2>
+
+      <ul>
+      <% @sign_up_for_beta_access.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :allowedaccess %><br />
+    <%= f.check_box :allowedaccess,:checked => @sign_up_for_beta_access.allowedaccess %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Show', @sign_up_for_beta_access %> |
+<%= link_to 'Back', sign_up_for_beta_accesses_path %>

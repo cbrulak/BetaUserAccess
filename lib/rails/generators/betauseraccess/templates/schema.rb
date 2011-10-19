@@ -1,11 +1,13 @@
 ActiveRecord::Schema.define(:version => 0) do
 
-    create_table :betauseraccess_widgets, :force => true do |t|
-      t.string    :title
-      t.datetime  :created_at
-      t.datetime  :updated_at
+   create_table :sign_up_for_beta_accesses do |t|
+      t.string :name
+      t.string :twitterid
+      t.boolean :allowedaccess
+
+      t.timestamps
     end
 
-    add_index :betauseraccess_widgets, [:title]
+    add_index :sign_up_for_beta_accesses, [:name]
 
 end
