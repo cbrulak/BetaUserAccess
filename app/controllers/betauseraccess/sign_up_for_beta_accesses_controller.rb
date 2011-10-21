@@ -4,8 +4,8 @@ module Betauseraccess
     
     def isuseramoderator
     	unless(IsCurrentUserModerator?)
-  	  redirect_to root_path
-  	end
+    	  redirect_to root_path
+    	end
     end	
   
     def thanks
