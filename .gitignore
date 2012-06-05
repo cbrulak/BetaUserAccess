@@ -1,2 +1,4 @@
 .project
 ./tmp/*
+.rbenv-gemsets
+.rbenv-version
