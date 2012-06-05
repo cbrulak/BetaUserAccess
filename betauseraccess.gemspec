@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = "betauseraccess"
-  s.version = "0.1.1"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Chris Brulak"]
+  s.authors = ["Your Name"]
   s.date = "2012-06-05"
-  s.email = "ccmbrulak@gmail.com"
+  s.email = "you@email.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
