@@ -7,7 +7,7 @@ class BetauseraccessGenerator < Rails::Generators::Base
   def self.source_root
     File.join(File.dirname(__FILE__), 'templates')
   end
-   
+
   def self.next_migration_number(dirname) #:nodoc:
     if ActiveRecord::Base.timestamped_migrations
       Time.now.utc.strftime("%Y%m%d%H%M%S")
@@ -18,18 +18,18 @@ class BetauseraccessGenerator < Rails::Generators::Base
 
 
   # Every method that is declared below will be automatically executed when the generator is run
-  
+
   def create_migration_file
     f = File.open File.join(File.dirname(__FILE__), 'templates', 'schema.rb')
     schema = f.read; f.close
-    
+
     schema.gsub!(/ActiveRecord::Schema.*\n/, '')
     schema.gsub!(/^end\n*$/, '')
 
     f = File.open File.join(File.dirname(__FILE__), 'templates', 'migration.rb')
     migration = f.read; f.close
     migration.gsub!(/SCHEMA_AUTO_INSERTED_HERE/, schema)
-    
+
     tmp = File.open "tmp/~migration_ready.rb", "w"
     tmp.write migration
     tmp.close
@@ -46,22 +46,22 @@ class BetauseraccessGenerator < Rails::Generators::Base
   def update_application_template
     f = File.open "app/views/layouts/application.html.erb"
     layout = f.read; f.close
-    
+
     if layout =~ /<%=[ ]+yield[ ]+%>/
       print "    \e[1m\e[34mquestion\e[0m  Your layouts/application.html.erb layout currently has the line <%= yield %>. This gem needs to change this line to <%= content_for?(:content) ? yield(:content) : yield %> to support its nested layouts. This change should not affect any of your existing layouts or views. Is this okay? [y/n] "
       begin
         answer = gets.chomp
       end while not answer =~ /[yn]/i
-      
+
       if answer =~ /y/i
-        
+
         layout.gsub!(/<%=[ ]+yield[ ]+%>/, '<%= content_for?(:content) ? yield(:content) : yield %>')
 
         tmp = File.open "tmp/~application.html.erb", "w"
         tmp.write layout; tmp.close
 
         remove_file 'app/views/layouts/application.html.erb'
-        copy_file '../../../tmp/~application.html.erb', 
+        copy_file '../../../tmp/~application.html.erb',
                   'app/views/layouts/application.html.erb'
         remove_file 'tmp/~application.html.erb'
       end
@@ -71,5 +71,12 @@ class BetauseraccessGenerator < Rails::Generators::Base
       puts "    \e[1m\e[31mconflict\e[0m  The gem is confused by your layouts/application.html.erb. It does not contain the default line <%= yield %>, you may need to make manual changes to get this gem's nested layouts working. Visit ###### for details."
     end
   end
-  
+
+  def copy_controller
+    copy_file '../../../../../app/controllers/betauseraccess/sign_up_for_beta_accesses_controller.rb', 'app/controllers/sign_up_for_beta_accesses_controller.rb'
+  end
+
+  def copy_views
+     directory '../../../../../app/views/betauseraccess/sign_up_for_beta_accesses', 'app/views/sign_up_for_beta_accesses/'
+  end
 end
