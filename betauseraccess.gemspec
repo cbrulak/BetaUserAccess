@@ -8,9 +8,9 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Your Name"]
+  s.authors = ["Chris Brulak"]
   s.date = "2012-06-05"
-  s.email = "you@email.com"
+  s.email = "ccmbrulak@gmail.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -42,7 +42,8 @@ Gem::Specification.new do |s|
   ]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
-  s.summary = "Description of your gem"
+  s.summary = "Block, request and allow beta access"
+  s.description = "BetaUserAccess allows you to block users from your site and at the same time allow them to request beta user access. Once access is granted the user can access the site. At the moment all based on twitter logins"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
