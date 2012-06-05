@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{betauseraccess}
+  s.name = "betauseraccess"
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Chris Brulak"]
-  s.date = %q{2012-06-05}
-  s.email = %q{ccmbrulak@gmail.com}
+  s.authors = ["Your Name"]
+  s.date = "2012-06-05"
+  s.email = "you@email.com"
   s.extra_rdoc_files = [
     "README.rdoc"
   ]
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "app/views/betauseraccess/sign_up_for_beta_accesses/thanks.html.erb",
     "app/views/layouts/betauseraccess.html.erb",
     "config/routes.rb",
+    "lib/acts_as_widget/base.rb",
     "lib/application_controller.rb",
     "lib/application_helper.rb",
     "lib/betauseraccess.rb",
@@ -40,16 +41,10 @@ Gem::Specification.new do |s|
     "public/stylesheets/betauseraccess.css"
   ]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{This Gem is a beta wall and beta access request gem.}
-  s.description = %q{ It allows you to deny access to your site and allows the visitor to request access.}
-  s.test_files = [
-    "test/test_helper.rb",
-    "test/unit/widget_test.rb"
-  ]
+  s.rubygems_version = "1.8.23"
+  s.summary = "Description of your gem"
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
